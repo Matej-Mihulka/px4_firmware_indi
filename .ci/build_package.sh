@@ -42,7 +42,7 @@ fi
 
 sudo apt-get -y update
 
-rosdep update
+rosdep update --include-eol-distros
 
 # without this, the lxml package won't be installed from the internal python dependencies
 sudo apt-get -y install libxslt1-dev
