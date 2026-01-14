@@ -1,3 +1,9 @@
+# Building PX4 in MRS system
+
+If you have a fresh install and you build the firmware for the first time outside `mrs_uav_gazebo_simulation` package, you will see weird errors that will not make sense. These packages helped me. Look for requirements.txt file in Tools folder and you will find more requirements for dev toolchain setup that will help you avoid errors.
+
+`pip install future toml jsonschema`
+
 # PX4 Drone Autopilot
 
 [![Releases](https://img.shields.io/github/release/PX4/PX4-Autopilot.svg)](https://github.com/PX4/PX4-Autopilot/releases) [![DOI](https://zenodo.org/badge/22634/PX4/PX4-Autopilot.svg)](https://zenodo.org/badge/latestdoi/22634/PX4/PX4-Autopilot)
