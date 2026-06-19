@@ -15,7 +15,7 @@ class IndiController : public ModuleBase<IndiController>, public ModuleParams
 {
 public:
 	IndiController();
-	~IndiController() override = default;
+	~IndiController() = default;
 
 	static int task_spawn(int argc, char *argv[]);
 
@@ -31,8 +31,8 @@ private:
 	// listening to MAVROS/ROS
 	uORB::Subscription _debug_key_value_sub{ORB_ID(debug_key_value)};
 
-	uORB::Publication<_debug_key_value_s> _debug_key_value_pub{ORB_ID(debug_key_value)};
+	uORB::Publication<debug_key_value_s> _debug_key_value_pub{ORB_ID(debug_key_value)};
 
-	int
+	int _curent_px4_mode{0};
 }
 
