@@ -6,6 +6,4 @@ px4_add_module(
 	STACK_MAIN 2000
 	SRCS
 	 	indi_controller.cpp
-	DEPENDS
-		uORB_topics
 	)

@@ -25,7 +25,7 @@ public:
 
 	static int print_usage(const char *reason = nullptr);
 
-	void Run() override;
+	void run() override;
 
 private:
 	// listening to MAVROS/ROS
@@ -33,6 +33,6 @@ private:
 
 	uORB::Publication<debug_key_value_s> _debug_key_value_pub{ORB_ID(debug_key_value)};
 
-	int _curent_px4_mode{0};
-}
+	int _current_px4_mode{0};
+};
 

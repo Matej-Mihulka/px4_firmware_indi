@@ -1,0 +1,5 @@
+menuconfig MODULES_INDI_CONTROLLER
+	bool "indi_controller"
+	default n
+	---help---
+		Enable the custom INDI controller.

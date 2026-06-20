@@ -12,7 +12,7 @@ IndiController::IndiController() :
 }
 
 // main loop
-void IndiController::Run(){
+void IndiController::run(){
 	PX4_INFO("INDI Controller module started");
 
 	// run while module is active
@@ -66,9 +66,9 @@ int IndiController::task_spawn(int argc, char *argv[]){
 	_task_id = px4_task_spawn_cmd("indi_controller", 	//name of the thread
 								SCHED_DEFAULT, 			// scheduling algorithm
 								SCHED_PRIORITY_ATTITUDE_CONTROL,	// priority - critical
-								2000;								// 2000 bytes of RAM
+								2000,								// <-- Changed semicolon to comma
 								(px4_main_t)&run_trampoline,
-								(char *const *)argv;)
+								(char *const *)argv);				// <-- Fixed the closing parenthesis and semicolon
 	if (_task_id < 0){
 		_task_id = -1;
 		return -errno;
@@ -96,3 +96,11 @@ int IndiController::print_usage(const char *reason)
     return 0;
 }
 
+
+// ---------------------------------------------------------
+// Main entry point for the module
+// ---------------------------------------------------------
+int indi_controller_main(int argc, char *argv[])
+{
+    return IndiController::main(argc, argv);
+}
