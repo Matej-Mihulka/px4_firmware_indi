@@ -32,19 +32,20 @@ void IndiController::run(){
 				if (requested_mode != _current_px4_mode){
 					PX4_INFO("INDI Controller changing to mode %d", requested_mode);
 					_current_px4_mode = requested_mode;
+				}
 
 
-					// sending ACK back
-					debug_key_value_s ack_msg{};
-					strncpy(ack_msg.key, "mode_ack", 10);
-					ack_msg.value = (float)_current_px4_mode;
+				// sending ACK back
+				debug_vect_s ack_msg{};
+				strncpy(ack_msg.name, "mode_ack", 10);
+				ack_msg.x = (float)_current_px4_mode;
 					ack_msg.timestamp = hrt_absolute_time();
 
-					// publish to uORB
-					_debug_key_value_pub.publish(ack_msg);
+				// publish to uORB
+				_debug_vect_pub.publish(ack_msg);
 
 
-				}
+
 
 			}
 		}

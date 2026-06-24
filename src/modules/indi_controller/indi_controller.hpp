@@ -5,6 +5,7 @@
 #include <uORB/Subscription.hpp>
 #include <uORB/Publication.hpp>
 #include <uORB/topics/debug_key_value.h>
+#include <uORB/topics/debug_vect.h>
 
 
 // this is so it is compiled such that OS written in C can understand it
@@ -30,9 +31,7 @@ public:
 private:
 	// listening to MAVROS/ROS
 	uORB::Subscription _debug_key_value_sub{ORB_ID(debug_key_value)};
-
-	uORB::Publication<debug_key_value_s> _debug_key_value_pub{ORB_ID(debug_key_value)};
-
+	uORB::Publication<debug_vect_s> _debug_vect_pub{ORB_ID(debug_vect)};
 	int _current_px4_mode{0};
 };
 
