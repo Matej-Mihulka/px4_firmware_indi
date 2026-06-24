@@ -274,5 +274,8 @@ else
 fi
 . ${R}etc/init.d/rc.logging
 
+# start INDI
+indi_controller start
+
 mavlink boot_complete
 replay trystart
