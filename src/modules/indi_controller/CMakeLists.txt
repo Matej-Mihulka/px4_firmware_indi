@@ -4,4 +4,6 @@ px4_add_module(
     STACK_MAIN 2000
     SRCS
         indi_controller.cpp
+	MODULE_CONFIG
+        module.yaml
 )

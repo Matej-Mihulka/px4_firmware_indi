@@ -1,0 +1,41 @@
+module_name: indi_controller
+parameters:
+  - group: INDI
+    definitions:
+      INDI_MASS:
+        description:
+          short: Mass of the UAV
+        type: float
+        default: 1.21
+        unit: kg
+      INDI_INERTIA_X:
+        description:
+          short: X-axis moment of inertia
+        type: float
+        default: 0.007
+      INDI_INERTIA_Y:
+        description:
+          short: Y-axis moment of inertia
+        type: float
+        default: 0.007
+      INDI_INERTIA_Z:
+        description:
+          short: Z-axis moment of inertia
+        type: float
+        default: 0.010
+      INDI_ARM_LEN:
+        description:
+          short: Arm length (moment arm)
+        type: float
+        default: 0.15
+        unit: m
+      INDI_CTAU:
+        description:
+          short: Motor torque constant
+        type: float
+        default: 0.012
+      INDI_CT:
+        description:
+          short: Motor thrust coefficient
+        type: float
+        default: 0.00005
